@@ -67,7 +67,7 @@ func (u *useCaseManager) DiscountUseCase() usecase.DiscountUseCase {
 }
 
 func (u *useCaseManager) PenjualanHarian() usecase.DailySell {
-	return usecase.NewDailySell(u.repoManager.BillDetailRepo())
+	return usecase.NewDailySell(u.repoManager.BillDetailRepo(), u.repoManager.MenuPriceRepo())
 }
 
 func NewUseCaseManager(repoManager RepositoryManager) UseCaseManager {
